@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Force Explorer: Push, Pull &amp; Power</title>
+<link rel="stylesheet" href="style.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+
+<!-- ===================== START SCREEN ===================== -->
+<div id="screen-start" class="screen active">
+
+  <img class="start-bg-img" src="images/3d-rendering-dreamy-landscape.png" alt="Start Background">
+
+  <!-- CSS-drawn clouds -->
+  <img class="cloud-img cloud-img-1" src="images/Cloud 1.png" alt="Cloud">
+<img class="cloud-img cloud-img-2" src="images/cloud 2.png" alt="Cloud">
+<img class="cloud-img cloud-img-3" src="images/cloud 3.png" alt="Cloud">
+<img class="cloud-img cloud-img-4" src="images/Cloud 4.png" alt="Cloud">
+<img class="cloud-img cloud-img-5" src="images/Cloud 5.png" alt="Cloud">
+
+  <!-- Floating icons -->
+  <img class="float-icon float-icon-muscle" src="images/biceps.png" alt="Muscle" width="200" height="200">
+  <img class="float-icon float-icon-magnet" src="images/magnet.png" alt="Magnet" width="170" height="170">
+  <img class="float-icon float-icon-apple" src="images/apple.png" alt="Apple" width="200" height="200">
+  <img class="float-icon float-icon-car" src="images/car.png" alt="Car" width="230" height="230">
+  <img class="float-icon float-icon-ball" src="images/ball.png" alt="Football" width="170" height="170">
+  <img class="float-icon float-icon-microscope" src="images/microscope.png" alt="Microscope" width="200" height="200">
+
+  <!-- Logo content -->
+  <div class="logo-wrap">
+    <img class="rocket-icon" src="images/rocket.png" alt="Rocket">
+    <div class="title-logo">Force & Energy Explorer</div>
+    <div class="subtitle"> Let's discover how forces and energy work around us!</div>
+  </div>
+
+  <!-- <p class="start-tagline">
+    Let's discover how forces work around us!
+  </p> -->
+
+  <button class="btn btn-start btn-start-main" onclick="showScreen('map')">
+    <img src="images/rocket.png" alt="" class="btn-icon">
+    Start Adventure!
+  </button>
+
+</div>
+
+<!-- ===================== WORLD MAP ===================== -->
+<div id="screen-map" class="screen screen-map-bg">
+  <div class="map-shell">
+    <div class="map-header">
+      <div class="map-kicker">FORCE & ENERGYEXPLORER</div>
+      <div class="map-heading-row">
+        <img src="images/Map.png" alt="Map" class="section-icon">
+        <div>
+          <div class="map-title">Choose Your World</div>
+          <p class="map-subtitle">Complete force first to energy.</p>
+        </div>
+      </div>
+
+      <div class="map-progress-wrap">
+        <div class="map-progress-topline">
+          <span>Your Journey</span>
+          <span id="map-progress-text" class="map-progress-text">0 / 2 Worlds Completed</span>
+        </div>
+        <div class="progress-bar progress-bar-map">
+          <div class="progress-fill" id="map-progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-grid">
+      <!-- CARD 1: MUSCULAR FORCE -->
+      <div class="map-card map-card-muscular" id="map-1" onclick="startLevel(1)">
+        <div class="map-card-topline">
+          <span class="map-level-chip">LEVEL 1</span>
+          <span class="map-status-chip map-status-open">READY</span>
+        </div>
+
+        <div class="map-visual map-visual-muscular">
+          <div class="map-visual-glow"></div>
+          <img class="card-icon" src="images/Weight lifting.png" alt="Force Explorer">
+        </div>
+
+        <div class="map-card-copy">
+          <div class="card-label">Force Explorer</div>
+          <div class="card-sub">Muscular, Frictional, Gravitational, Magnetic Force</div>
+          <p class="map-card-desc">Watch actions, identify forces, and answer 8 visual questions.</p>
+        </div>
+
+        <div class="map-card-action">
+          <span>Start Exploring</span>
+          <span class="map-arrow">→</span>
+        </div>
+      </div>
+
+      <!-- CARD 2: FRICTIONAL FORCE -->
+      <div class="map-card map-card-friction locked" id="map-2" onclick="startLevel(2)">
+        <img class="lock-icon" id="lock-2" src="images/Lock.png" alt="Locked">
+
+        <div class="map-card-topline">
+          <span class="map-level-chip">LEVEL 2</span>
+          <span class="map-status-chip map-status-locked">LOCKED</span>
+        </div>
+
+        <div class="map-visual map-visual-energy">
+  <div class="energy-icon-group">
+    <img
+      class="energy-card-icon"
+      src="images/solar panel.png"
+      alt="Solar Panel"
+    >
+
+    <img
+      class="energy-card-icon"
+      src="images/Windmill.png"
+      alt="Wind Turbine"
+    >
+  </div>
+</div>
+
+        <div class="map-card-copy">
+          <div class="card-label">Energy World</div>
+          <div class="card-sub">Renewable · Non-renewable · Forms of Energy</div>
+          <p class="map-card-desc">Explore renewable & non-renewable energy, different forms of energy.</p>
+        </div>
+
+        <div class="map-card-action">
+          <span>Complete Level 1</span>
+          <span class="map-arrow">→</span>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-orange btn-back-small" onclick="showScreen('start')">
+      <span class="map-back-arrow">←</span> Back to Start
+    </button>
+  </div>
+</div>
+
+<!-- ===================== LEVEL 1: FORCE EXPLORER QUIZ ===================== -->
+<div id="screen-level1" class="screen level-screen level1-bg">
+  <div class="level-header level-header-1">
+    <img class="lv-icon" src="images/biceps.png" alt="Force Quiz" width="40" height="40">
+    <div>
+      <div class="lv-title">Force Explorer Quiz</div>
+      <div class="lv-sub lv-sub-1">Watch, think, and type — 8 Questions</div>
+    </div>
+    <button class="lv-back btn" onclick="showScreen('map')">
+      <img src="images/map.png" alt="" width="18" height="18" class="btn-icon"> Map
+    </button>
+  </div>
+
+  <div class="level-scene level1-quiz-scene">
+    <div class="info-box l1-top-banner">
+      <span>Professor Force says: <em>"Watch the moving object and type the correct force name!"</em></span>
+    </div>
+
+    <div class="l1-content-row">
+      <div class="scene-box l1-image-box">
+        <div id="l1-scene-stage" class="l1-scene-stage"></div>
+        <div id="l1-scene-caption" class="l1-scene-caption">Watch the animation carefully.</div>
+      </div>
+
+      <div class="l1-qa-panel">
+        <div class="l1-question-card">
+          <div id="l1-progress" class="l1-progress">Question 1 / 8</div>
+          <div id="l1-question" class="l1-question">Why is the parachute falling slowly? What is the force?</div>
+
+          <label class="l1-answer-label" for="l1-answer-input">Type your answer</label>
+          <input id="l1-answer-input" class="l1-answer-input" type="text" placeholder="Example: frictional force" autocomplete="off">
+
+          <button class="btn btn-green l1-submit-btn" id="l1-submit-btn" onclick="checkL1Answer()">Submit Answer</button>
+
+          <div id="l1-feedback" class="l1-feedback"></div>
+          <div class="l1-help-text">Type the force name and press Enter or click the button.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== LEVEL 2: FRICTIONAL FORCE ===================== -->
+<!-- LEVEL 2: ENERGY -->
+<div id="screen-level2" class="screen level-screen level2-bg">
+  <div class="level-header level-header-2">
+    <img class="lv-icon" src="images/biceps.png" alt="Force Quiz">
+    <div>
+      <div class="lv-title">Force Explorer Quiz</div>
+      <div class="lv-sub lv-sub-2">Watch, think, and type — 8 Questions</div>
+    </div>
+    <button class="lv-back btn" onclick="showScreen('map')">Map</button>
+  </div>
+
+  <div class="level-scene level2-quiz-scene">
+    <div class="info-box l2-top-banner">
+      <span>Professor Force says: <em>"Watch the moving object and type the correct force name!"</em></span>
+    </div>
+
+    <div class="l2-content-row">
+      <div class="scene-box l2-image-box">
+        <div id="l2-scene-stage" class="l2-scene-stage"></div>
+        <div id="l2-scene-caption" class="l2-scene-caption">Solar panels and wind turbines are examples of renewable energy.</div>
+      </div>
+
+      <div class="l2-qa-panel">
+        <div class="l2-question-card">
+          <div id="l2-progress" class="l2-progress">Question 1 / 8</div>
+          <div id="l2-question" class="l2-question">Which source is renewable?</div>
+
+          <label class="l2-answer-label" for="l2-answer-input">Type your answer</label>
+          <input id="l2-answer-input" class="l2-answer-input" type="text" placeholder="Example: solar" autocomplete="off">
+
+          <button class="btn btn-green l2-submit-btn" id="l2-submit-btn" onclick="checkL2Answer()">Submit Answer</button>
+
+          <div id="l2-feedback" class="l2-feedback"></div>
+          <div class="l2-help-text">Type the answer and press Enter or click the button.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+<!-- ===================== FINAL CHALLENGE ===================== -->
+<div id="screen-challenge" class="screen level-screen level-challenge-bg">
+  <div class="level-header level-header-challenge">
+    <!--
+      Required: assets/images/characters/detective.svg
+    -->
+    <img class="lv-icon" src="assets/images/characters/detective.svg" alt="Detective" width="40" height="40">
+    <div>
+      <div class="lv-title">Force Detective!</div>
+      <div class="lv-sub lv-sub-challenge">Final Challenge</div>
+    </div>
+    <button class="lv-back btn" onclick="showScreen('map')">
+      <img src="assets/images/ui/map.svg" alt="" width="18" height="18" class="btn-icon"> Map
+    </button>
+  </div>
+
+  <div class="level-scene">
+    <div class="info-box info-box-orange">
+      <img class="info-icon" src="assets/images/characters/detective.svg" alt="" width="36" height="36">
+      <span>Professor Force says: <em>"You've learned all four forces! Now be a Force Detective and identify each one!"</em></span>
+    </div>
+
+    <div class="text-center">
+      <div class="challenge-score" id="challenge-score">Score: 0 / 6</div>
+    </div>
+
+    <!-- Scenario card — icon is swapped by JS -->
+    <div class="challenge-scenario" id="challenge-scenario">
+      <!--
+        JS writes an <img> into #scenario-icon via ASSETS map in script.js
+      -->
+      <div class="scenario-icon" id="scenario-icon">
+        <img src="assets/images/ui/thinking.svg" alt="Thinking" width="80" height="80">
+      </div>
+      <div class="scenario-text" id="scenario-text">Loading scenario…</div>
+    </div>
+
+    <!-- Force choice buttons -->
+    <div class="force-choice-grid">
+      <button class="force-choice fc-muscular" onclick="checkForce('muscular')">
+        <img src="assets/images/ui/muscle.svg"     alt="" width="28" height="28" class="choice-icon">
+        Muscular Force
+      </button>
+      <button class="force-choice fc-friction" onclick="checkForce('friction')">
+        <img src="assets/images/ui/road.svg"       alt="" width="28" height="28" class="choice-icon">
+        Frictional Force
+      </button>
+      <button class="force-choice fc-gravity" onclick="checkForce('gravity')">
+        <img src="assets/images/ui/earth.svg"      alt="" width="28" height="28" class="choice-icon">
+        Gravitational Force
+      </button>
+      <button class="force-choice fc-magnetic" onclick="checkForce('magnetic')">
+        <img src="assets/images/ui/magnet.svg"     alt="" width="28" height="28" class="choice-icon">
+        Magnetic Force
+      </button>
+    </div>
+
+    <div id="challenge-fb" class="challenge-fb"></div>
+  </div>
+</div>
+
+<!-- ===================== FINAL / CELEBRATION SCREEN ===================== -->
+<div id="screen-final" class="screen">
+  <div class="confetti-wrap" id="confetti-wrap"></div>
+  <div class="final-content">
+    <img class="final-trophy" src="images/trophy.png" alt="Trophy" width="120" height="120">
+    <div class="final-title">Congratulations!<br>You are a Force Master and have conquered the Energy World!</div>
+    <div class="final-sub">You've mastered forces and the Energy World!
+    </div>
+
+    <!-- Animated star row -->
+    <div class="final-stars-row">
+      <img src="images/star.png" alt="star" width="40" height="40">
+      <img src="images/star.png" alt="star" width="40" height="40">
+      <img src="images/star.png" alt="star" width="40" height="40">
+      <img src="images/star.png" alt="star" width="40" height="40">
+      <img src="images/star.png" alt="star" width="40" height="40">
+    </div>
+
+    <button class="btn btn-start btn-play-again" onclick="restartGame()">
+      Play Again!
+    </button>
+  </div>
+</div>
+
+<!-- ===================== QUIZ OVERLAY ===================== -->
+<div id="quiz-overlay">
+ <div class="quiz-card">
+  <div class="quiz-q-icon" id="quiz-icon"></div>
+  <div class="quiz-question" id="quiz-question"></div>
+  
+  <div class="quiz-input-wrap">
+    <input type="text" class="quiz-opt" id="quiz-input" placeholder="Type your answer here...">
+  </div>
+  
+  <div class="quiz-feedback" id="quiz-feedback"></div>
+  <button class="btn btn-green" id="quiz-submit-btn" onclick="submitQuizAnswer()">Submit</button>
+  <button class="btn btn-blue" id="quiz-next-btn" onclick="nextQuizQuestion()">Next</button>
+</div>
+
+    <div class="quiz-feedback" id="quiz-feedback"></div>
+    <button class="btn btn-green quiz-continue-btn hidden-btn" id="quiz-next-btn" onclick="closeQuiz()">
+      <img src="assets/images/ui/checkmark.svg" alt="" width="22" height="22" class="btn-icon">
+      Continue!
+    </button>
+  </div>
+</div>
+
+<!-- ===================== LEVEL COMPLETE OVERLAY ===================== -->
+<div id="level-complete-overlay">
+  <div class="lc-card">
+    <img class="lc-trophy" src="images/trophy.png" alt="Trophy" width="80" height="80">
+    <div class="lc-title" id="lc-title">Level Complete!</div>
+    <div class="lc-badge" id="lc-badge">
+      <img src="images/star.png" alt="★" width="18" height="18" class="inline-icon">
+      Badge Earned!
+    </div>
+    <div class="lc-stars">
+      <img src="images/star.png" alt="star">
+      <img src="images/star.png" alt="star">
+      <img src="images/star.png" alt="star">
+    </div>
+    <button class="btn btn-green" id="lc-continue-btn" onclick="closeLevelComplete()">
+      <img src="images/rocket.png" alt="" width="22" height="22" class="btn-icon">
+      Keep Going!
+    </button>
+  </div>
+</div>
+
+<!-- ===================== STARS BURST CONTAINER ===================== -->
+<!-- JS dynamically injects .star-p elements here — they use img tags (see script.js) -->
+<div class="stars-burst" id="stars-burst"></div>
+
+<script src="script.js"></script>
+
+<!-- ===================== NARRATOR MUTE BUTTON ===================== -->
+<style>
+#narrator-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 3px solid #222;
+  background: #fff9c4;
+  font-size: 1.6rem;
+  cursor: pointer;
+  box-shadow: 3px 4px 0 #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+  line-height: 1;
+}
+#narrator-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 6px 0 #222;
+}
+#narrator-btn:active {
+  transform: translateY(1px);
+  box-shadow: 2px 2px 0 #222;
+}
+</style>
+<button id="narrator-btn" onclick="narrator.toggleMute()" title="Toggle narration sound">🔊</button>
+
+</body>
+</html>
